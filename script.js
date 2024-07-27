@@ -14,27 +14,19 @@ const trimmedpassword = document.getElementById('password').Value.trim();
 let isvalid = true;
 let messages =[];
 
-if ( trimmedusername === "") {
-    isvalid = false;
-    messages.push("User name is required.");
-}else if ( trimmedusername.length < 3) {
+
+if ( trimmedusername.length < 3) {
     isvalid = false;
     messages.push("username must be atleast 3 characters long.");
 }
 
 
-if (trimmedemail === "") {
-    isvalid = false;
-    messages.push("Email is required.");
-} else if (!trimmedemail.includes('@') || !trimmedemail.includes('.')) {
+if (!trimmedemail.includes('@') || !trimmedemail.includes('.')) {
     isvalid = false;
     messages.push("Email must include '@' and '.' characters.");
 }
 
-if (trimmedpassword === "") {
-    isvalid = false;
-    messages.push("password is required");
-} else if (trimmedpassword.length < 8) {
+if (trimmedpassword.length < 8) {
     isvalid = false;
     messages.push("Password length must be greater than 8.");
 }

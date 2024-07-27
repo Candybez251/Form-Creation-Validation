@@ -1,4 +1,5 @@
-document.addEventListener('DOMcontentLoaded', () => {
+document.addEventListener("DOMcontentLoaded", function() {
+
 const form = document.getElementById('registration-form')
 const feebackDiv = document.getElementById('form-feedback')
 

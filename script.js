@@ -7,27 +7,27 @@ const feebackDiv = document.getElementById('form-feedback');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-const trimmedusername = document.getElementById('username').Value.trim();
-const trimmedemail = document.getElementById('email').Value.trim();
-const trimmedpassword = document.getElementById('password').Value.trim();
+const username = document.getElementById('username').Value.trim();
+const email = document.getElementById('email').Value.trim();
+const password = document.getElementById('password').Value.trim();
 
 
 let isvalid = true;
 let messages =[];
 
 
-if ( trimmedusername.length < 3) {
+if ( username.length < 3) {
     isvalid = false;
     messages.push("username must be atleast 3 characters long.");
 }
 
 
-if (!trimmedemail.includes('@') || !trimmedemail.includes('.')) {
+if (!email.includes('@') || !email.includes('.')) {
     isvalid = false;
     messages.push("Email must include '@' and '.' characters.");
 }
 
-if (trimmedpassword.length < 8) {
+if (password.length < 8) {
     isvalid = false;
     messages.push("Password length must be greater than 8.");
 }

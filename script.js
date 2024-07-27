@@ -1,50 +1,36 @@
-document.addEventListener('DOMcontentLoaded', function() {
-
-const form = document.getElementById('registration-form');
-const feebackDiv = document.getElementById('form-feedback');
-
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-const username = document.getElementById('username').Value.trim();
-const email = document.getElementById('email').Value.trim();
-const password = document.getElementById('password').Value.trim();
-
-
-let isvalid = true;
-let messages =[];
-
-
-if ( username.length < 3) {
-    isvalid = false;
-    messages.push("username must be atleast 3 characters long.");
-}
-
-
-if (!email.includes('@') || !email.includes('.')) {
-    isvalid = false;
-    messages.push("Email must include '@' and '.' characters.");
-}
-
-if (password.length < 8) {
-    isvalid = false;
-    messages.push("Password length must be greater than 8.");
-}
-
-
-feebackDiv.style.display = "block";
-
-if (isvalid) {
-    feebackDiv.textContent ="Registration successful!";
-    feebackDiv.style.color = "#28a745";
-} else {
-    feebackDiv.innerHTML = messages.join("<br>");
-    feebackDiv.style.color = "#dc3545";
-}
-
-
-});
-
-
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('registration-form');
+    const feedbackDiv = document.getElementById('form-feedback');
+  
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      
+      let isValid = true;
+      let messages = [];
+      
+      if (username.length < 3) {
+        isValid = false;
+        messages.push('The username should be longer than 3 characters.');
+      }
+      if (!email.includes('@') && !email.includes('.') ) {
+        isValid = false;
+        messages.push('Your Email adress should include "@" and "." ');
+      }
+      if (password.length < 8) {
+        isValid = false;
+        messages.push('Password must include at least 8 characters.');
+      }
+        feedbackDiv.style.display = "block";
+      if (isValid) {
+        feedbackDiv.innerText = 'Registration successful!';
+        feedbackDiv.style.color = "#28a745"; 
+      } else {
+        feedbackDiv.innerHTML = messages.join('<br>'); 
+        feedbackDiv.style.color = "#dc3545"; 
+      }
+    });
+  });

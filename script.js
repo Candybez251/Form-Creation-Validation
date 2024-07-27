@@ -5,7 +5,7 @@ const feebackDiv = document.getElementById('form-feedback');
 
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
 const trimmedusername = document.getElementById('username').Value.trim();
 const trimmedemail = document.getElementById('email').Value.trim();

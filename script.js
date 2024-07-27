@@ -1,7 +1,7 @@
 document.addEventListener('DOMcontentLoaded', function() {
 
-const form = document.getElementById('registration-form')
-const feebackDiv = document.getElementById('form-feedback')
+const form = document.getElementById('registration-form');
+const feebackDiv = document.getElementById('form-feedback');
 
 
 form.addEventListener('submit', (event) => {

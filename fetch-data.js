@@ -21,13 +21,11 @@ async function fetchUserData()  {
 
     }
 
-    catch(error) {
+    catch (error) {
         dataContainer.innerHTML = '';
         dataContainer.innerHTML = 'Failed to load user data.';
-    
+        dataContainer.classList.add('error');  
     }
 
 }
-document.addEventListener('DOMContentLoaded', () => {
-    fetchUserData();
-});
+document.addEventListener('DOMContentLoaded', fetchUserData);
